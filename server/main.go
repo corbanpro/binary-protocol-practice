@@ -2,12 +2,12 @@ package main
 
 import (
 	"bytes"
-	"example/proto"
 	"fmt"
 	"io"
 	"net/http"
 	"time"
 
+	"example/proto"
 	"github.com/gin-gonic/gin"
 )
 
@@ -18,6 +18,7 @@ func main() {
 	router := gin.Default()
 	router.POST("/message", func(c *gin.Context) { postMessage(c, requestCountChannel) })
 	router.GET("/requests", func(c *gin.Context) { getRequests(c, requestCountChannel, requestsSent) })
+	router.StaticFile("/favicon.ico", "./assets/favicon.ico")
 	router.GET("/", getIndex)
 
 	go func() {

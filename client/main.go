@@ -2,13 +2,13 @@ package main
 
 import (
 	"encoding/json"
-	"example/proto"
 	"fmt"
 	"io"
 	"math/rand"
 	"net/http"
 	"time"
 
+	"example/proto"
 	"github.com/google/uuid"
 )
 
